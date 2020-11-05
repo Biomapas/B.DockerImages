@@ -7,6 +7,7 @@ ARG GCC_VERSION=9.3.0-r2
 ARG LIBC_DEV_VERSION=0.7.2-r3
 ARG LIBFFI_DEV_VERSION=3.3-r2
 ARG OPENSSL_DEV_VERSION=1.1.1g-r0
+ARG JQ_VERSION=1.6-r1
 ARG NPM_VERSION=12.18.4-r0
 ARG PYTHON3_VERSION=3.8.5-r0
 ARG PIP3_VERSION=20.1.1-r0
@@ -24,7 +25,8 @@ RUN \
     apk add gcc=$GCC_VERSION && \
     apk add libc-dev=$LIBC_DEV_VERSION && \
     apk add libffi-dev=$LIBFFI_DEV_VERSION && \
-    apk add openssl-dev=$OPENSSL_DEV_VERSION
+    apk add openssl-dev=$OPENSSL_DEV_VERSION && \
+    apk add jq=$JQ_VERSION
 
 # Install node 12.
 RUN apk add npm=$NPM_VERSION

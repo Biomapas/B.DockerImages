@@ -13,6 +13,7 @@ Project that builds a docker image with these tools:
 - LIBC_DEV: **0.7.2-r3**
 - LIBFFI_DEV: **3.3-r2**
 - OPENSSL_DEV: **1.1.1g-r0**
+- JQ **1.6-r1**
 - NPM: **12.18.4-r0**
 - PYTHON3: **3.8.5-r0**
 - PIP3: **20.1.1-r0**
