@@ -16,10 +16,6 @@ RUN \
 # Install AWS CLI.
 RUN pip install awscli
 
-# Install latest AWS CDK.
-RUN \
-    npm install -g aws-cdk
-
 # Install other python-specific packages.
 RUN \
     pip install wheel && \

@@ -1,7 +1,7 @@
 # B.CiCdFull
 
 Docker based project that creates a docker image with various useful 
-tools required for AWS and Python-heavy infrastructure pipelines.
+tools required for AWS and Python-heavy pipelines.
 
 ### Description
 
