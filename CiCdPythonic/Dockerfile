@@ -11,7 +11,10 @@ RUN pip install pip wheel twine setuptools --upgrade --upgrade-strategy eager
 
 # Install node and npm.
 RUN \
-    curl -sL https://deb.nodesource.com/setup_15.x | bash && \
+    # For those who run into AWS CDK issues,
+    # (https://github.com/aws/aws-cdk/issues/12536)
+    # we downgrade node.
+    curl -sL https://deb.nodesource.com/setup_14.x | bash && \
     apt-get install -y nodejs && \
     node -v && \
     npm -v
