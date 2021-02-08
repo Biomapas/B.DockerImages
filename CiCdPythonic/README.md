@@ -5,7 +5,7 @@ tools required for AWS and Python-heavy pipelines.
 
 ### Description
 
-Project built on latest (python 3.10 buster) image.
+Project built on latest (python 3.9.1) image.
 
 ### Remarks
 

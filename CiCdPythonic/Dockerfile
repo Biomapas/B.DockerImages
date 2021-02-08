@@ -1,10 +1,13 @@
-FROM python:3.10.0a5-buster
+FROM python:3.9.1
 MAINTAINER Biomapas <laimonas.sutkus@biomapas.com>
 
 # Update system.
 RUN \
     apt-get update -y && \
     apt-get upgrade -y
+
+# Install other python-specific packages.
+RUN pip install pip wheel twine setuptools --upgrade --upgrade-strategy eager
 
 # Install node and npm.
 RUN \
@@ -15,10 +18,5 @@ RUN \
 
 # Install AWS CLI.
 RUN pip install awscli
-
-# Install other python-specific packages.
-RUN \
-    pip install wheel && \
-    pip install twine
 
 ENTRYPOINT []
