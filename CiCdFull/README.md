@@ -7,17 +7,22 @@ tools required for AWS-Python infrastructure pipelines.
 
 Project that builds a docker image with these tools:
 
-- BASH: **5.0.17-r0**
-- CURL: **7.69.1-r1**
-- GCC: **9.3.0-r2**
+- BASH: **5.1.0-r0**
+- CURL: **7.74.0-r0**
+- LIBGCC: **10.2.1_pre1-r3**
+- GCC: **10.2.1_pre1-r3**
 - LIBC_DEV: **0.7.2-r3**
 - LIBFFI_DEV: **3.3-r2**
-- OPENSSL_DEV: **1.1.1g-r0**
+- OPENSSL_DEV: **1.1.1i-r0**
 - JQ **1.6-r1**
-- NPM: **12.18.4-r0**
-- PYTHON3: **3.8.5-r0**
-- PIP3: **20.1.1-r0**
+- RUST **1.47.0-r2**
+- CARGO **1.47.0-r2**
+- GIT **2.30.1-r0**
+
+- NPM: **14.15.4-r0**
+- PYTHON3: **3.8.7-r0**
 - AWS_CLI: **1.18.159**
+- PIP3: **latest**
 - AWS_CDK: **latest**
 - WHEEL: **latest**
 - TWINE: **latest**
