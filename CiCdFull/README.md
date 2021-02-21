@@ -1,33 +1,11 @@
 # B.CiCdFull
 
 Docker based project that creates a docker image with various useful 
-tools required for AWS-Python infrastructure pipelines.
+tools required for AWS, Python, Node infrastructure pipelines.
 
 ### Description
 
-Project that builds a docker image with these tools:
-
-- BASH: **5.1.0-r0**
-- CURL: **7.74.0-r0**
-- LIBGCC: **10.2.1_pre1-r3**
-- GCC: **10.2.1_pre1-r3**
-- LIBC_DEV: **0.7.2-r3**
-- LIBFFI_DEV: **3.3-r2**
-- OPENSSL_DEV: **1.1.1i-r0**
-- JQ **1.6-r1**
-- RUST **1.47.0-r2**
-- CARGO **1.47.0-r2**
-- GIT **2.30.1-r0**
-
-- NPM: **14.15.4-r0**
-- PYTHON3: **3.8.7-r0**
-- AWS_CLI: **1.18.159**
-- PIP3: **latest**
-- AWS_CDK: **latest**
-- WHEEL: **latest**
-- TWINE: **latest**
-
-The image is based on Alpine Linux (https://alpinelinux.org/).
+Docker image that supports both Python and Node environments.
 
 ### Remarks
 
@@ -49,9 +27,6 @@ The project assumes the following:
 
 ### Useful sources
 
-- The built image is Alpine-based:<br>
-https://alpinelinux.org/
-
 - Read about docker technology:<br>
 https://www.docker.com/
 
@@ -69,7 +44,7 @@ docker pull biomapas/cicd-full:latest
 
 Use it in your Dockerfile:
 ```
-image: biomapas/cicd-full:0.0.1
+image: biomapas/cicd-full:1.0.0
 ```
 
 Or execute it and login:
