@@ -3,3 +3,4 @@
 # ------------------------------------------------
 
 npm install -g aws-cdk@latest
+npm install --prefix . aws-cdk

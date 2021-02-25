@@ -1,5 +1,5 @@
 # ------------------------------------------------
-# Tries to install current python package and all dependencies specified in setup.py file.
+# Tries to install current python package and all dependencies specified in requirements.txt file.
 #
 # However, this is no ordinary script because it takes into consideration two things:
 #
@@ -16,6 +16,9 @@
 # A: Because when a bitbucket pipeline runs it gets some environment variables set. For example, BITBUCKET_BRANCH.
 # ------------------------------------------------
 
+set -e
+set -o pipefail
+
 # Pip installation arguments.
 args=( "--upgrade" "--upgrade-strategy" "eager" )
 
@@ -31,6 +34,6 @@ then
   args+=( "--pre" )
 fi
 
-pip install . "${args[@]}"
+pip install -r requirements.txt "${args[@]}"
 
 pip list
