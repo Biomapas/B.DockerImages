@@ -11,8 +11,8 @@ set -o pipefail
 path_to_tests="$1"
 
 source /usr/local/python_utils/new_venv.sh
-source /usr/local/node_utils/install_aws_cdk.sh
-source /usr/local/magic_utils/magic_pip_install.sh
+/usr/local/node_utils/install_aws_cdk.sh
+/usr/local/magic_utils/magic_pip_install.sh
 source /usr/local/magic_utils/magic_global_prefix.sh
 source /usr/local/python_utils/clean_python.sh
 

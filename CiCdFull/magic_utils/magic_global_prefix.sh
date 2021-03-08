@@ -28,7 +28,7 @@ this_script_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 if [ -z "$BITBUCKET_PR_ID" ]
 then
-  branch=$( source "$this_script_path/../bitbucket_utils/get_merged_pull_request_branch.sh" )
+  branch=$( "$this_script_path/../bitbucket_utils/get_merged_pull_request_branch.sh" )
 else
   branch=$BITBUCKET_BRANCH
 fi
