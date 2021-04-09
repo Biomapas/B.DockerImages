@@ -1,4 +1,4 @@
-FROM python:3.9.1
+FROM python:3.8
 MAINTAINER Biomapas <laimonas.sutkus@biomapas.com>
 
 # Update system.
@@ -8,6 +8,11 @@ RUN \
 
 # Install other python-specific packages.
 RUN pip install pip wheel twine setuptools --upgrade --upgrade-strategy eager
+
+# Install Cmake related libraries.
+RUN \
+    apt-get install -y gcc clang clang-tools cmake && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install node and npm.
 RUN \

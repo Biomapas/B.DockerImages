@@ -1,11 +1,15 @@
-# B.CiCdFull
+# B.CiCdPythonic
 
 Docker based project that creates a docker image with various useful 
 tools required for AWS and Python-heavy pipelines.
 
 ### Description
 
-Project built on latest (python 3.9.1) image.
+Project built on latest (`python:3.8`) image with additional support for:
+
+- `nodejs`
+- `clang`
+- `cmake`
 
 ### Remarks
 
