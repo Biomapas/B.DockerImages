@@ -17,4 +17,4 @@ fi
 /usr/local/node_utils/install_aws_cdk.sh
 source /usr/local/python_utils/clean_python.sh
 
-./node_modules/aws-cdk/bin/cdk destroy "*"
+./node_modules/aws-cdk/bin/cdk destroy --all --require-approval never --force

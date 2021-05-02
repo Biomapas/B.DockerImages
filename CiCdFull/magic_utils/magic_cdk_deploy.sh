@@ -18,4 +18,4 @@ fi
 source /usr/local/python_utils/clean_python.sh
 
 ./node_modules/aws-cdk/bin/cdk bootstrap
-./node_modules/aws-cdk/bin/cdk deploy "*"
+./node_modules/aws-cdk/bin/cdk deploy --all --require-approval never
