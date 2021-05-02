@@ -33,9 +33,12 @@ else
   branch=$BITBUCKET_BRANCH
 fi
 
-prefix=$( echo -n $branch | sha256sum )
+prefix=$( echo -n "$BITBUCKET_WORKSPACE$BITBUCKET_PROJECT_KEY$BITBUCKET_REPO_SLUG$branch" | sha256sum )
 
 echo DEBUG: branch: "$branch"
+echo DEBUG: workspace: "$BITBUCKET_WORKSPACE"
+echo DEBUG: project: "$BITBUCKET_PROJECT_KEY"
+echo DEBUG: repo slug: "$BITBUCKET_REPO_SLUG"
 echo DEBUG: prefix "$prefix"
 
 export GLOBAL_PREFIX="$prefix"
