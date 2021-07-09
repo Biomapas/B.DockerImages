@@ -27,4 +27,7 @@ RUN \
 # Install AWS CLI.
 RUN pip install awscli
 
+# Add support for alternative keyring backends.Used with Gemfury packages.
+RUN pip install keyrings.alt
+
 ENTRYPOINT []
