@@ -2,9 +2,6 @@
 
 Docker based project that creates a docker image with various useful
 tools required for **_Angular_**-based frontend application pipelines.
-The project also assumes that you are using **_Cypress_** to test your
-web applications. If you are not using this testing tool, probably you
-shouldn't use this docker image either.
 
 ### Description
 
@@ -17,9 +14,9 @@ Project that builds a docker image with these tools:
 - PYTHON PIP: **20.2.3**
 - PYTHON: **3.8.9**
 
-The image is based on cypress docker image that is based on node image.
-Official cypress docker image can be found here:
-https://hub.docker.com/r/cypress/included.
+The image is based on node docker image.
+Official node docker image can be found here:
+https://hub.docker.com/_/node.
 
 ### Remarks
 
@@ -41,12 +38,6 @@ The project assumes the following:
 - You have basic-good knowledge in Docker.
 
 ### Useful sources
-
-- Official Cypress Dockerhub:<br>
-  https://hub.docker.com/u/cypress
-
-- Cypress website:<br>
-  https://www.cypress.io/
 
 - Read about docker technology:<br>
   https://www.docker.com/
