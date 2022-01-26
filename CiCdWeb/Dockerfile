@@ -1,4 +1,4 @@
-FROM cypress/included:6.0.0
+FROM node:16.13.2
 MAINTAINER Biomapas <laimonas.sutkus@biomapas.com>
 
 # Update system.
