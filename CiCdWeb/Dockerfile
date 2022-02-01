@@ -9,7 +9,10 @@ RUN \
 # Install tools.
 RUN \
     apt install -y jq && \
-    npm install -g @angular/cli
+    npm install -g @angular/cli \
+    apt install chromium
+
+ENV CHROME_BIN=chromium
 
 # Fix python.
 RUN \

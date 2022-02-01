@@ -13,6 +13,7 @@ Project that builds a docker image with these tools:
 - ANGULAR CLI: **13.1.4**
 - PYTHON PIP: **20.2.3**
 - PYTHON: **3.8.9**
+- CHROMIUM **25.0**
 
 The image is based on node docker image.
 Official node docker image can be found here:
@@ -30,6 +31,7 @@ by anyone. Improvements and pull requests are welcome.
 - Docker
 - Dockerfile
 - Node/Npm
+- Chromium
 
 ### Assumptions
 
