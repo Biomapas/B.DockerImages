@@ -21,6 +21,10 @@ RUN \
     node -v && \
     npm -v
 
+# Add node/npm related packages.
+RUN \
+    npm install swagger-inline -g
+
 # Copy bitbucket util files.
 # These scripts let you do actions related to bitbuceket and bitbucket pipeliens.
 ADD bitbucket_utils /usr/local/bitbucket_utils
