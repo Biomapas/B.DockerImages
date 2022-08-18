@@ -37,4 +37,8 @@ ADD node_utils /usr/local/node_utils
 # These scripts let you do actions with python/pip and related libraries.
 ADD python_utils /usr/local/python_utils
 
+# Copy documentation util files.
+# These scripts let you do various actions for creating documentation.
+ADD python_utils /usr/local/documentation_utils
+
 ENTRYPOINT []
