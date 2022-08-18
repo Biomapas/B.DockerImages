@@ -43,6 +43,6 @@ ADD python_utils /usr/local/python_utils
 
 # Copy documentation util files.
 # These scripts let you do various actions for creating documentation.
-ADD python_utils /usr/local/documentation_utils
+ADD documentation_utils /usr/local/documentation_utils
 
 ENTRYPOINT []
