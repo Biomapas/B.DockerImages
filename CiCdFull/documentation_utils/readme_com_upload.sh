@@ -14,7 +14,8 @@ api_specification_id="$1"
 api_key="$2"
 specification_file="$3"
 
-username_password=$( printf "%s" "${api_key}:" | base64 )
+# Warning! If you are not on a GNU-based OS system, remove the "-w 0" flag from base64 command.
+username_password=$( printf "%s" "${api_key}:" | base64 -w 0 | tr -d " " )
 basic_auth="Basic $username_password"
 
 curl --request PUT \
@@ -22,4 +23,6 @@ curl --request PUT \
      --header "Accept: application/json" \
      --header "Authorization: $basic_auth" \
      --header "Content-Type: multipart/form-data" \
-     --form "spec=@$specification_file"
+     --form "spec=@$specification_file" \
+     --http1.1 \
+     --fail
