@@ -20,7 +20,7 @@ set -e
 set -o pipefail
 
 # Pip installation arguments.
-args=( "--upgrade" "--upgrade-strategy" "eager" )
+args=( "--upgrade" "--upgrade-strategy" "eager" "--use-deprecated=legacy-resolver" )
 
 # For those who are using Gemfury private repositories, add GEMFURY_AUTH_R and GEMFURY_ACCOUNT environment variables.
 if [ -n "$GEMFURY_AUTH_R" ] && [ -n "$GEMFURY_ACCOUNT" ]

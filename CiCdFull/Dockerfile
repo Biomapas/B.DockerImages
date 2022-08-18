@@ -6,8 +6,11 @@ RUN \
     apt-get update -y && \
     apt-get upgrade -y
 
+# Freeze pip version to 22.
+RUN pip install pip==22.0.0
+
 # Install other python-specific packages.
-RUN pip install pip wheel twine setuptools awscli requests --upgrade --upgrade-strategy eager
+RUN pip install wheel twine setuptools awscli requests --upgrade --upgrade-strategy eager
 
 # Install Gcc/Cmake related libraries.
 RUN \
