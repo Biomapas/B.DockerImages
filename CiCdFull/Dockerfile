@@ -26,7 +26,10 @@ RUN \
 
 # Add node/npm related packages.
 RUN \
-    npm install swagger-inline -g
+    # Used to generate swagger documentation from source code comments.
+    npm install swagger-inline -g \
+    # Used to validate generated documentation.
+    npm install @redocly/cli -g
 
 # Copy bitbucket util files.
 # These scripts let you do actions related to bitbuceket and bitbucket pipeliens.
