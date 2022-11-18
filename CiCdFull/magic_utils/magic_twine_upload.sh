@@ -10,6 +10,10 @@ else
   /usr/local/magic_utils/magic_pip_install.sh
 fi
 
-if [ "$BITBUCKET_BRANCH" != "master" ]; then echo ".dev" >> VERSION; fi
+if [[ $@ == *"--pre"* ]];
+then
+  echo ".dev" >> VERSION;
+fi
+
 python setup.py sdist
 /usr/local/python_utils/twine_upload.sh "dist/*" "GEMFURY"

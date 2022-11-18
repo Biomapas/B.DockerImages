@@ -28,8 +28,7 @@ then
   args+=( "--extra-index-url=https://$GEMFURY_AUTH_R@pypi.fury.io/$GEMFURY_ACCOUNT/" )
 fi
 
-# For those who are using Bitbucket pipelines and want to install pre-releases if the branch is non-master.
-if [ -n "$BITBUCKET_BRANCH" ] && [ "$BITBUCKET_BRANCH" != "master" ]
+if [[ $@ == *"--pre"* ]];
 then
   args+=( "--pre" )
 fi
