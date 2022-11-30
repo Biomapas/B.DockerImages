@@ -27,6 +27,7 @@ if [ -n "$GEMFURY_AUTH_R" ] && [ -n "$GEMFURY_ACCOUNT" ]; then
   args+=("--extra-index-url=https://$GEMFURY_AUTH_R@pypi.fury.io/$GEMFURY_ACCOUNT/")
 fi
 
+# For situations where pre-release versions of python libraries is required, a --pre flag can be provided.
 if [[ $@ == *"--pre"* ]]; then
   args+=("--pre")
 fi

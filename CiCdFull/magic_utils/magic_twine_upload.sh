@@ -1,6 +1,8 @@
 set -e
 set -o pipefail
 
+# For situations where pre-release versions of python libraries is required, a --pre flag can be provided.
+# This script also adds a suffix to the package version that is deployed into GEMFURY.
 args=("")
 if [[ $@ == *"--pre"* ]]; then
   args+=("--pre")

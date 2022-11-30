@@ -5,6 +5,7 @@
 set -e
 set -o pipefail
 
+# For situations where pre-release versions of python libraries is required, a --pre flag can be provided.
 args=("")
 if [[ $@ == *"--pre"* ]]; then
   args+=("--pre")
