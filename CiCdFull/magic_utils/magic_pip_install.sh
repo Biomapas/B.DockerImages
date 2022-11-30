@@ -20,17 +20,16 @@ set -e
 set -o pipefail
 
 # Pip installation arguments.
-args=( "--upgrade" "--upgrade-strategy" "eager" "--use-deprecated=legacy-resolver" )
+args=("--upgrade" "--upgrade-strategy" "eager" "--use-deprecated=legacy-resolver")
 
 # For those who are using Gemfury private repositories, add GEMFURY_AUTH_R and GEMFURY_ACCOUNT environment variables.
-if [ -n "$GEMFURY_AUTH_R" ] && [ -n "$GEMFURY_ACCOUNT" ]
-then
-  args+=( "--extra-index-url=https://$GEMFURY_AUTH_R@pypi.fury.io/$GEMFURY_ACCOUNT/" )
+if [ -n "$GEMFURY_AUTH_R" ] && [ -n "$GEMFURY_ACCOUNT" ]; then
+  args+=("--extra-index-url=https://$GEMFURY_AUTH_R@pypi.fury.io/$GEMFURY_ACCOUNT/")
 fi
 
-if [[ $@ == *"--pre"* ]];
-then
-  args+=( "--pre" )
+# For situations where pre-release versions of python libraries is required, a --pre flag can be provided.
+if [[ $@ == *"--pre"* ]]; then
+  args+=("--pre")
 fi
 
 pip install -r requirements.txt "${args[@]}"

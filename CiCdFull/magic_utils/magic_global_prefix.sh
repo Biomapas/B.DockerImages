@@ -24,16 +24,15 @@
 set -e
 set -o pipefail
 
-this_script_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+this_script_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-if [ -z "$BITBUCKET_PR_ID" ]
-then
-  branch=$( "$this_script_path/../bitbucket_utils/get_merged_pull_request_branch.sh" )
+if [ -z "$BITBUCKET_PR_ID" ]; then
+  branch=$("$this_script_path/../bitbucket_utils/get_merged_pull_request_branch.sh")
 else
   branch=$BITBUCKET_BRANCH
 fi
 
-prefix=$( echo -n "$BITBUCKET_WORKSPACE$BITBUCKET_PROJECT_KEY$BITBUCKET_REPO_SLUG$branch" | sha256sum )
+prefix=$(echo -n "$BITBUCKET_WORKSPACE$BITBUCKET_PROJECT_KEY$BITBUCKET_REPO_SLUG$branch" | sha256sum)
 
 echo DEBUG: branch: "$branch"
 echo DEBUG: workspace: "$BITBUCKET_WORKSPACE"
