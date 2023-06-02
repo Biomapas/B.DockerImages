@@ -17,6 +17,11 @@ RUN \
     apt-get install -y gcc clang clang-tools cmake && \
     rm -rf /var/lib/apt/lists/*
 
+# Install gettext library.
+RUN \
+   # gettext library contains envsubst command which is used to replace environment variables in files.
+   apt-get install -y gettext
+
 # Install node and npm.
 RUN \
     curl -sL https://deb.nodesource.com/setup_14.x | bash && \
