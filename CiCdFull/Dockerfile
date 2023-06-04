@@ -12,21 +12,15 @@ RUN pip install pip==22.0.0
 # Install other python-specific packages.
 RUN pip install wheel twine setuptools awscli requests --upgrade --upgrade-strategy eager
 
-# Install Gcc/Cmake related libraries.
-RUN \
-    apt-get install -y gcc clang clang-tools cmake
-
-
-# Install gettext library.
-RUN \
-   # gettext library contains envsubst command which is used to replace environment variables in files.
-   apt-get install -y gettext && \
-   rm -rf /var/lib/apt/lists/*
-
 # Install gettext library.
 RUN \
    # gettext library contains envsubst command which is used to replace environment variables in files.
    apt-get install -y gettext
+
+# Install Gcc/Cmake related libraries.
+RUN \
+    apt-get install -y gcc clang clang-tools cmake && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install node and npm.
 RUN \
