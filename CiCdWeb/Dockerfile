@@ -1,4 +1,4 @@
-FROM node:16.13.2
+FROM node:16.18.1
 MAINTAINER Biomapas <laimonas.sutkus@biomapas.com>
 
 # Update system.
