@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.11
 MAINTAINER Biomapas <laimonas.sutkus@biomapas.com>
 
 # Update system.
@@ -6,8 +6,8 @@ RUN \
     apt-get update -y && \
     apt-get upgrade -y
 
-# Freeze pip version to 22.
-RUN pip install pip==22.0.0
+# Install pip.
+RUN pip install "pip==23.*"
 
 # Install other python-specific packages.
 RUN pip install wheel twine setuptools awscli requests --upgrade --upgrade-strategy eager
@@ -24,7 +24,7 @@ RUN \
 
 # Install node and npm.
 RUN \
-    curl -sL https://deb.nodesource.com/setup_14.x | bash && \
+    curl -sL https://deb.nodesource.com/setup_18.x | bash && \
     apt-get install -y nodejs && \
     node -v && \
     npm -v

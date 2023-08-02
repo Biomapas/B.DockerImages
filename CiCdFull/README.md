@@ -7,7 +7,7 @@ tools required for AWS, Python, Node infrastructure pipelines.
 
 Docker image that supports both Python and Node environments.
 
-This docker image is built on latest (`python:3.8`) image with additional support for:
+This docker image is built on latest (`python:3.11`) image with additional support for:
 
 - `gcc`
 - `clang`
