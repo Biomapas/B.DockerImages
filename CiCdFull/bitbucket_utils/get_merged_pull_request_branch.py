@@ -21,21 +21,32 @@ current_commit = os.environ['BITBUCKET_COMMIT']
 current_workspace = os.environ['BITBUCKET_WORKSPACE']
 current_repository = os.environ['BITBUCKET_REPO_SLUG']
 
+# More about access tokens: https://support.atlassian.com/bitbucket-cloud/docs/access-tokens/
+bitbucket_access_token = os.getenv('BITBUCKET_ACCESS_TOKEN')
+
 # Do not provide your real password here. Use app password.
 # Read more: https://support.atlassian.com/bitbucket-cloud/docs/app-passwords/.
-bitbucket_username = os.environ['BITBUCKET_USERNAME']
-bitbucket_password = os.environ['BITBUCKET_PASSWORD']
+bitbucket_username = os.getenv('BITBUCKET_USERNAME')
+bitbucket_password = os.getenv('BITBUCKET_PASSWORD')
 
-# We are calling Bitbucket API get pull requests endpoint.
-# Documentation: https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/pullrequests#get.
-response = requests.get(
+parameters = dict(
     url=(
         f'https://api.bitbucket.org/2.0/repositories/'
         f'{current_workspace}/{current_repository}/pullrequests?'
         f'state=MERGED'
-    ),
-    auth=(bitbucket_username, bitbucket_password)
+    )
 )
+
+if bitbucket_access_token:
+    parameters['headers'] = {'Authorization': f'Bearer {bitbucket_access_token}'}
+elif bitbucket_username and bitbucket_password:
+    parameters['auth'] = (bitbucket_username, bitbucket_password)
+else:
+    raise Exception('Either BITBUCKET_ACCESS_TOKEN or BITBUCKET_USERNAME and BITBUCKET_PASSWORD must be set.')
+
+# We are calling Bitbucket API get pull requests endpoint.
+# Documentation: https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/pullrequests#get.
+response = requests.get(**parameters)
 
 # According to documentation, these error responses are possible.
 if response.status_code in [401, 404]:
